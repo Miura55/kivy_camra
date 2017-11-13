@@ -14,7 +14,7 @@ import numpy as np
 class CameraApp(App):
     def build(self):
         self.img1 = Image(source='logoCL.jpg')   #cria uma imagem onde depois iremos inserir a imagem da camera
-        label1= Label(text="Experimentos com vídeo (II)")  #label superior
+        label1= Label(text="Webcam motion")  #label superior
         label2= Label(text="www.cadernodelaboratorio.com.br") #label inferior
         layout = BoxLayout(orientation='vertical')  #|aqui criamos um layout  vertical
         layout.add_widget(label1)   #inserimos os widgets segundo a ordem que desejamos apresentá-los na tela
@@ -27,7 +27,7 @@ class CameraApp(App):
         #cv2.imshow("CV2 Image", frame)
         Clock.schedule_interval(self.atualizaImagem, 1.0/30.0)   #criamos um clock para atualizar a imagem a cada 1/320 de segundo
         return layout
- 
+
     def atualizaImagem(self, dt):
         ret, frame = self.capture.read()   #captura uma imagem da camera
 
